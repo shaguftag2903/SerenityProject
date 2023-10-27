@@ -3,6 +3,7 @@ package testcases;
 import net.serenitybdd.annotations.Managed;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.junit.runners.SerenityRunner;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
@@ -25,8 +26,8 @@ public class MyFirstTest extends PageObject {
     public void getGoogleData(){
         driver.get("https://www.google.com");
         driver.findElement(By.name("q")).sendKeys("firefly"+ Keys.ENTER);
-        new WebDriverWait(driver, Duration.ofSeconds(5)).until(titleContains(" firefly - Google"));
-        assertThat (driver. getTitle()).contains ("firefly - Google");
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(titleContains("firefly - Google Search"));
+        Assert.assertTrue((driver.getTitle()).contains("firefly - Google Search"));
     }
 
 }

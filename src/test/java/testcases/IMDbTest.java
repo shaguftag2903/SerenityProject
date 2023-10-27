@@ -8,7 +8,6 @@ import net.serenitybdd.junit.runners.SerenityRunner;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -22,8 +21,6 @@ public class IMDbTest extends PageObject {
 
 	@Steps
 	HomePage homePage;
-
-	private static final Logger log = Logger.getLogger(IMDbTest.class);
 
 	@Test
 	public void tc_verify_sort_movies_based_on_imdb_rating() throws InterruptedException {
